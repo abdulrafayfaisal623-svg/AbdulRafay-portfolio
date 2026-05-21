@@ -1,19 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Abdul Rafay Portfolio</title>
 
     <style>
 
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body{
             background-color: black;
             color: white;
-            text-align: center;
-            font-family: Arial;
-            margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
             scroll-behavior: smooth;
         }
 
@@ -22,49 +28,56 @@
             padding: 20px;
             position: sticky;
             top: 0;
+            text-align: center;
+            z-index: 1000;
         }
 
         nav a{
             color: white;
             text-decoration: none;
-            margin: 20px;
+            margin: 15px;
             font-size: 20px;
+            transition: 0.3s;
         }
 
         nav a:hover{
             color: cyan;
-            transition: 0.3s;
             text-shadow: 0 0 10px cyan;
         }
 
-        img{
-            width: 200px;
-            border-radius: 100px;
-            margin-top: 30px;
+        .hero{
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero img{
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
             border: 4px solid cyan;
             transition: 0.5s;
         }
 
-        img:hover{
-            transform: scale(1.1);
-            box-shadow: 0 0 20px cyan;
+        .hero img:hover{
+            transform: scale(1.05);
+            box-shadow: 0 0 25px cyan;
         }
 
         h1{
             color: cyan;
-            font-size: 50px;
+            font-size: 55px;
             margin-top: 20px;
             text-shadow: 0 0 10px cyan;
         }
 
-        h2{
-            color: cyan;
-            margin-top: 60px;
-            font-size: 35px;
+        .typing{
+            font-size: 24px;
+            margin-top: 15px;
         }
 
-        p{
-            font-size: 22px;
+        .buttons{
+            margin-top: 25px;
         }
 
         button{
@@ -72,92 +85,116 @@
             color: black;
             padding: 15px 30px;
             border: none;
-            font-size: 20px;
             border-radius: 10px;
+            font-size: 18px;
             cursor: pointer;
             margin: 10px;
             transition: 0.5s;
+            font-weight: bold;
         }
 
         button:hover{
             background-color: white;
-            box-shadow: 0 0 20px cyan;
             transform: scale(1.05);
-        }
-
-        .skills{
-            margin-top: 30px;
-        }
-
-        .skill-box{
-            display: inline-block;
-            background-color: #111;
-            padding: 20px;
-            margin: 15px;
-            border-radius: 10px;
-            width: 200px;
-            font-size: 20px;
-            border: 2px solid cyan;
-            transition: 0.5s;
-        }
-
-        .skill-box:hover{
-            transform: translateY(-10px);
             box-shadow: 0 0 20px cyan;
         }
 
-        .services{
+        section{
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        h2{
+            color: cyan;
+            font-size: 40px;
+            margin-bottom: 25px;
+            text-shadow: 0 0 10px cyan;
+        }
+
+        p{
+            font-size: 20px;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .container{
             margin-top: 40px;
         }
 
-        .service-box{
+        .card{
             display: inline-block;
             background-color: #111;
-            padding: 25px;
+            width: 280px;
             margin: 20px;
+            padding: 25px;
             border-radius: 15px;
-            width: 250px;
             border: 2px solid cyan;
             transition: 0.5s;
         }
 
-        .service-box:hover{
+        .card:hover{
             transform: translateY(-10px);
-            box-shadow: 0 0 20px cyan;
+            box-shadow: 0 0 25px cyan;
         }
 
-        .service-box h3{
+        .card h3{
             color: cyan;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .skill-bar{
+            width: 80%;
+            background-color: #222;
+            margin: 20px auto;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .skill-fill{
+            height: 30px;
+            background-color: cyan;
+            color: black;
+            font-weight: bold;
+            line-height: 30px;
+            padding-right: 10px;
         }
 
         footer{
-            margin-top: 60px;
             background-color: #111;
-            padding: 20px;
+            padding: 25px;
+            text-align: center;
             font-size: 18px;
+            margin-top: 50px;
         }
 
-        @media(max-width: 600px){
+        @media(max-width: 700px){
 
             h1{
-                font-size: 35px;
+                font-size: 38px;
+            }
+
+            h2{
+                font-size: 30px;
             }
 
             p{
                 font-size: 18px;
             }
 
-            .skill-box{
-                width: 80%;
-            }
-
-            .service-box{
-                width: 80%;
-            }
-
             nav a{
                 display: block;
                 margin: 10px;
+            }
+
+            .card{
+                width: 90%;
+            }
+
+            .hero img{
+                width: 170px;
+                height: 170px;
             }
 
         }
@@ -170,128 +207,148 @@
 
     <nav>
 
-        <a href="">Home</a>
+        <a href="#">Home</a>
 
-        <a href="">About</a>
+        <a href="#about">About</a>
 
-        <a href="">Skills</a>
+        <a href="#skills">Skills</a>
 
-        <a href="">Services</a>
+        <a href="#journey">Journey</a>
 
-        <a href="">Projects</a>
-
-        <a href="">Contact</a>
+        <a href="#contact">Contact</a>
 
     </nav>
 
-    <img src="myphoto.jpeg">
+    <div class="hero">
 
-    <h1>Abdul Rafay</h1>
+        <img src="myphoto.jpeg" alt="My Photo">
 
-    <p>I am a Web Developer and IT Student</p>
+        <h1>Abdul Rafay</h1>
 
-    <a href="https://wa.me/923192511275" target="_blank">
+        <p class="typing">
+            IT Student | Future Freelancer | Beginner Web Developer
+        </p>
 
-        <button>WhatsApp Me</button>
+        <div class="buttons">
 
-    </a>
+            <a href="https://wa.me/923192511275" target="_blank">
+                <button>WhatsApp Me</button>
+            </a>
 
-    <p>Email: abdulrafayfaisal623@gmail.com</p>
-
-    <h2>About Me</h2>
-
-    <p>
-        I Am Abdul Rafay. I Am Learning Web Development And Programming.
-        I Want To Become A Professional Freelancer And Software Developer.
-    </p>
-
-    <h2>My Skills</h2>
-
-    <div class="skills">
-
-        <div class="skill-box">HTML</div>
-
-        <div class="skill-box">CSS</div>
-
-        <div class="skill-box">JavaScript</div>
-
-        <div class="skill-box">Web Development</div>
-
-    </div>
-
-    <h2>My Services</h2>
-
-    <div class="services">
-
-        <div class="service-box">
-
-            <h3>Website Design</h3>
-
-            <p>I create modern and responsive websites.</p>
-
-        </div>
-
-        <div class="service-box">
-
-            <h3>Portfolio Websites</h3>
-
-            <p>I build professional portfolio websites.</p>
-
-        </div>
-
-        <div class="service-box">
-
-            <h3>Landing Pages</h3>
-
-            <p>I create clean and attractive landing pages.</p>
+            <a href="mailto:abdulrafayfaisal623@gmail.com">
+                <button>Email Me</button>
+            </a>
 
         </div>
 
     </div>
 
-    <h2>My Projects</h2>
+    <section id="about">
 
-    <div class="services">
+        <h2>About Me</h2>
 
-        <div class="service-box">
+        <p>
+            Assalamualaikum! My name is Abdul Rafay.
+            I am an IT student and currently learning technology and web development.
+            I enjoy working with computers and learning new IT skills.
+            My goal is to become a successful freelancer and professional IT expert in the future.
+        </p>
 
-            <h3>Portfolio Website</h3>
+    </section>
 
-            <p>I created my personal portfolio website using HTML and CSS.</p>
+    <section id="skills">
+
+        <h2>Professional IT Skills</h2>
+
+        <div class="skill-bar">
+            <div class="skill-fill" style="width: 80%;">
+                IT Support
+            </div>
+        </div>
+
+        <div class="skill-bar">
+            <div class="skill-fill" style="width: 70%;">
+                Computer Troubleshooting
+            </div>
+        </div>
+
+        <div class="skill-bar">
+            <div class="skill-fill" style="width: 65%;">
+                Networking Basics
+            </div>
+        </div>
+
+    </section>
+
+    <section id="journey">
+
+        <h2>My Journey</h2>
+
+        <div class="container">
+
+            <div class="card">
+
+                <h3>Started Learning</h3>
+
+                <p>
+                    I started learning IT and web development to improve my technical skills and build my future career.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Portfolio Website</h3>
+
+                <p>
+                    I created and published my first portfolio website online using GitHub Pages.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Future Goal</h3>
+
+                <p>
+                    My dream is to become a successful freelancer and work on professional IT and web projects.
+                </p>
+
+            </div>
 
         </div>
 
-        <div class="service-box">
+    </section>
 
-            <h3>Landing Page</h3>
+    <section id="contact">
 
-            <p>I designed a responsive landing page for business websites.</p>
+        <h2>Contact Me</h2>
+
+        <p>
+            Feel free to contact me for future collaborations and projects.
+        </p>
+
+        <br>
+
+        <p>Email: abdulrafayfaisal623@gmail.com</p>
+
+        <div class="buttons">
+
+            <a href="https://facebook.com/" target="_blank">
+                <button>Facebook</button>
+            </a>
+
+            <a href="https://instagram.com/" target="_blank">
+                <button>Instagram</button>
+            </a>
+
+            <a href="https://linkedin.com/" target="_blank">
+                <button>LinkedIn</button>
+            </a>
 
         </div>
 
-        <div class="service-box">
-
-            <h3>Business Website</h3>
-
-            <p>I built a modern business website with responsive design.</p>
-
-        </div>
-
-    </div>
-
-    <h2>Follow Me</h2>
-
-    <a href="https://facebook.com/" target="_blank">
-        <button>Facebook</button>
-    </a>
-
-    <a href="https://instagram.com/" target="_blank">
-        <button>Instagram</button>
-    </a>
-
-    <a href="https://linkedin.com/" target="_blank">
-        <button>LinkedIn</button>
-    </a>
+    </section>
 
     <footer>
 
